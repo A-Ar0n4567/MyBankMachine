@@ -20,17 +20,27 @@ public class MyBankMachine {
         
         //bank menu
         ATM atm = new ATM("RBC",5435.0);
+        //menu loop
+        boolean done = false;
         
-        String choice = JOptionPane.showInputDialog("Enter the Number of the Option You Would Like to Choose: \n 1: Deposit \n 2: Withdraw:\n 3: Display Balance: \n 4: Daily Compound Interest");
-        if(choice.equals("1")){
+        while(!done){
         
-            atm.Deposit();
-        }else if(choice.equals("2")){
-            atm.Withdraw();
-        }else if(choice.equals("3")){
-            atm.Balance();
-        }else if(choice.equals("3")){
-            atm.Interest();
+             String choice = JOptionPane.showInputDialog("Enter the Number of the Option You Would Like to Choose: \n 1: Deposit \n 2: Withdraw:\n 3: Display Balance: \n 4: Daily Compound Interest \n 5: Close Program");
+            if(choice.equals("1")){
+                atm.Deposit();
+            }else if(choice.equals("2")){
+                atm.Withdraw();
+            }else if(choice.equals("3")){
+                atm.Balance();
+            }else if(choice.equals("4")){
+                atm.Interest();
+            }else if(choice.equals("5")){
+                done = true;
+            }
         }
+        
+        
+        
+       
   }
 }
